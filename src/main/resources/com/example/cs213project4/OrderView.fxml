@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cs213project4.controller.OrderController">
+    <top>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Current Order" textFill="#b22222">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label fx:id="orderNumber" text="Order #1">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" top="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </top>
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <ListView fx:id="items" prefHeight="300.0" prefWidth="200.0" />
+                <Separator prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Separator>
+                <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                    <children>
+                        <Label text="Subtotal:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="subtotal" text="0.00">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets right="20.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                    <children>
+                        <Label text="Tax:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="tax" text="0.00">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets right="20.0" top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                    <children>
+                        <Label text="Total:">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="total" text="0.00">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets right="20.0" top="5.0" />
+                    </padding>
+                </HBox>
+            </children>
+            <BorderPane.margin>
+                <Insets left="10.0" right="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="removeItem" mnemonicParsing="false" onAction="#handleRemoveItem" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #FF9800;" text="Remove Item" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="clearOrder" mnemonicParsing="false" onAction="#handleClearOrder" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #F44336;" text="Clear Order" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="placeOrder" mnemonicParsing="false" onAction="#handlePlaceOrder" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #4CAF50;" text="Place Order" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="close" mnemonicParsing="false" onAction="#handleClose" prefHeight="40.0" prefWidth="80.0" text="Close">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="20.0" top="10.0" />
+            </BorderPane.margin>
+        </HBox>
+    </bottom>
+</BorderPane>
